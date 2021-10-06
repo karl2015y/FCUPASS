@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+        integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://myfcu.fcu.edu.tw/main/S4301/css/s43_custom_insch.css?20200321">
+    <link rel="stylesheet" href="https://myfcu.fcu.edu.tw/main/S9000/css/custom.css">
+
+
+    <title>Hello, world!</title>
+</head>
+
+<body style="    background-image: url(/bg.png);
+background-size: cover;
+background-repeat: no-repeat;">
+
+
+    <!-- Button trigger modal -->
+    <div style="    width: 50%;
+height: 100%;
+display: flex;
+flex-direction: column;
+justify-content: center;
+margin: auto;">
+        <input type="text" id="people_name_input" value="" placeholder="這裡打人名">
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            PASS
+        </button>
+    </div>
+
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-content">
+                <a style="right: -10px;" title="關閉" class="image-item image-close"></a>
+                <div class="modal-header">
+                    <h4 style="font-weight: bold;
+                    font-size: 18px;
+                    margin-top: 10px;
+                    margin-bottom: 10px;">PASS</h4>
+                </div>
+                <div class="modal-body">
+                    <div class="">
+
+                        <div style="display: flex;flex-direction: row;justify-content: center;align-items: center;"
+                            class="">
+                            <div id="circle" class="circle backgcolor_3">
+                                <div class="content">
+                                    <div id="today_date" class="date">10/06</div>
+                                    <div id="people_name" class="dvtitle"></div>
+
+                                    <div style="text-align:center" class="">
+                                        <div class="dvtitle">自主健康管理</div>
+                                        <div class="pass">PASS</div>
+                                    </div>
+
+                                    <div class="footer">逢甲大學關心您</div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn" style="color: #fff;
+                    background-color: #337ab7;
+                    border-color: #2e6da4;">關閉</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
+        integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js"
+        integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
+        crossorigin="anonymous"></script>
+    <script>
+        document.querySelector("#circle").className = `circle backgcolor_${new Date().getDay()}`
+        document.querySelector("#today_date").textContent = `${String(new Date().getMonth() + 1).padStart(2, '0')}/${String(new Date().getDate()).padStart(2, '0')}`
+        document.querySelector("#people_name_input").addEventListener("change", () => {
+            document.querySelector("#people_name").textContent = document.querySelector("#people_name_input").value
+        })
+    </script>
+</body>
+
+</html>
