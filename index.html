@@ -92,10 +92,14 @@ margin: auto;">
         integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k"
         crossorigin="anonymous"></script>
     <script>
+        document.querySelector("#people_name").textContent = localStorage.getItem('people_name');
+        document.querySelector("#people_name_input").value = localStorage.getItem('people_name');
         document.querySelector("#circle").className = `circle backgcolor_${new Date().getDay()}`
         document.querySelector("#today_date").textContent = `${String(new Date().getMonth() + 1).padStart(2, '0')}/${String(new Date().getDate()).padStart(2, '0')}`
         document.querySelector("#people_name_input").addEventListener("change", () => {
             document.querySelector("#people_name").textContent = document.querySelector("#people_name_input").value
+            localStorage.setItem('people_name', document.querySelector("#people_name").textContent);
+
         })
     </script>
 </body>
